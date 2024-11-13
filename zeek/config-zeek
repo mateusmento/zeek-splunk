@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Transformar os logs do Zeek para JSON
+sudo cp /opt/zeek/share/zeek/site/local.zeek /opt/zeek/share/zeek/site/local.zeek.old
+sudo rm /opt/zeek/share/zeek/site/local.zeek
+sudo cp ./local.zeek /opt/zeek/share/zeek/site
+sudo chmod 664 /opt/zeek/share/zeek/site/local.zeek
+sudo chown root:zeek /opt/zeek/share/zeek/site/local.zeek # Dono root, grupo zeek

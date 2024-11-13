@@ -1,0 +1,10 @@
+#!/bin/sh
+sudo /opt/zeek/bin/zeekctl stop
+sudo pip config set global.break-system-packages True
+sudo pip3 install GitPython semantic-version --user
+sudo /opt/zeek/bin/zkg autoconfig 
+sudo /opt/zeek/bin/zkg refresh
+sudo /opt/zeek/bin/zkg upgrade
+sudo /opt/zeek/bin/zkg install --force zeek/hosom/file-extraction
+sudo /opt/zeek/bin/zkg load zeek/hosom/file-extraction
+sudo /opt/zeek/bin/zeekctl deploy
