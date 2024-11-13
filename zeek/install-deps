@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo apt install cmake make gcc g++ flex bison libpcap-dev libssl-dev python3-dev swig zlib1g-dev
+sudo apt install zeek-lts-core zeekctl-lts zeek-lts-zkg zeek-lts-client
