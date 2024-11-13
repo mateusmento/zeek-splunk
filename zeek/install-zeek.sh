@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # >>Instalar Zeek
-cd /opt
 
 # Escolher o repositorio adequado a versao do Debian em https://software.opensuse.org/download.html?project=security%3Azeek&package=zeek-lts
 sudo cat /etc/debian_version
@@ -28,7 +27,6 @@ sudo sed -i "s/interface=.*/interface=$active_interface/g" $config_file # Substi
 echo -e "\ninterface=$active_interface" | sudo tee -a /opt/zeek/etc/node.cfg
 
 # Gerenciador de pacotes 'zkg'
-cd /opt
 sudo pip config set global.break-system-packages True
 sudo pip3 install GitPython semantic-version --user
 sudo /opt/zeek/bin/zkg autoconfig 
