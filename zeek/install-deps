@@ -1,3 +1,9 @@
 #!/bin/sh
 sudo apt install cmake make gcc g++ flex bison libpcap-dev libssl-dev python3-dev swig zlib1g-dev
+echo "deb http://archive.ubuntu.com/ubuntu/ jammy main universe" | sudo tee /etc/apt/sources.list.d/ubuntu-22.04.list
+sudo apt update
+sudo apt-get install libssl3
+sudo rm /etc/apt/sources.list.d/ubuntu-22.04.list
+sudo apt-get install libc6
+sudo apt-get install libc++6
 sudo apt install zeek-lts-core zeekctl-lts zeek-lts-zkg zeek-lts-client
