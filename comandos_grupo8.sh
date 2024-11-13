@@ -15,7 +15,7 @@ sudo apt-get install zip
 # >>Instalar Splunk
 
 # Copie MANUALMENTE os arquivos do diretório "Grupo 8" do Windows para o diretório "/tcc/grupo8/" na VM Linux
-sudo mkdir /tcc/grupo8/
+sudo mkdir -p /tcc/grupo8/
 sudo chmod 744 /tcc/grupo8/*.sh
 cp /tcc/grupo8/*.sh /opt
 cp /tcc/grupo8/*.sh /opt
