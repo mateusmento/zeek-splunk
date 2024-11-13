@@ -15,11 +15,11 @@ sudo bash -c 'echo -e "ZeekPort = 27760" >> /opt/zeek/etc/zeekctl.cfg'
 export PATH=/opt/zeek/bin:$PATH
 
 sudo /opt/zeek/bin/zeekctl stop
-cp /opt/zeek/etc/node.cfg /opt/zeek/etc/node.cfg.old
-rm /opt/zeek/etc/node.cfg
-cp ./node.cfg /opt/zeek/etc/ # Interface AWS
-chmod 664 /opt/zeek/etc/node.cfg
-chown root:zeek /opt/zeek/etc/node.cfg # Dono root, grupo zeek
+sudo cp /opt/zeek/etc/node.cfg /opt/zeek/etc/node.cfg.old
+sudo rm /opt/zeek/etc/node.cfg
+sudo cp ./node.cfg /opt/zeek/etc/ # Interface AWS
+sudo chmod 664 /opt/zeek/etc/node.cfg
+sudo chown root:zeek /opt/zeek/etc/node.cfg # Dono root, grupo zeek
 
 active_interface=$(ip route | grep default | awk '{print $5}') # Encontra a interface de rede ativa
 config_file="/opt/zeek/etc/node.cfg" # Define o caminho do arquivo de configuração
