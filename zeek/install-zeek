@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo apt-get -y install cmake make gcc g++ flex libfl-dev bison libpcap-dev libssl-dev python3 python3-dev swig zlib1g-dev
+sudo apt-get -y install curl git cmake make gcc g++ flex libfl-dev bison libpcap-dev libssl-dev python3 python3-dev swig zlib1g-dev
 
 sudo cat /etc/debian_version
 # ATENCAO: ESSE REPOSITORIO SOH FUNCIONA NO DEBIAN 12
