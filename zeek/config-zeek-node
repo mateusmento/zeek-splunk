@@ -10,4 +10,4 @@ sudo chown root:zeek /opt/zeek/etc/node.cfg # Dono root, grupo zeek
 active_interface=$(ip route | grep default | awk '{print $5}') # Encontra a interface de rede ativa
 config_file="/opt/zeek/etc/node.cfg" # Define o caminho do arquivo de configuração
 sudo sed -i "s/interface=.*/interface=$active_interface/g" $config_file # Substitui todas as ocorrências de "interface=" pelo valor da interface ativa
-echo -e "\ninterface=$active_interface" | sudo tee -a /opt/zeek/etc/node.cfg
+echo "\ninterface=$active_interface" | sudo tee -a /opt/zeek/etc/node.cfg
