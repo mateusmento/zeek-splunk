@@ -14,7 +14,7 @@ sudo apt -y update
 sudo apt -y install zeek-lts -f
 sudo setcap cap_net_raw=eip /opt/zeek/bin/zeek
 sudo setcap cap_net_raw=eip /opt/zeek/bin/capstats
-sudo bash -c 'echo -e "ZeekPort = 27760" >> /opt/zeek/etc/zeekctl.cfg'
+sudo bash -c 'echo "ZeekPort = 27760" >> /opt/zeek/etc/zeekctl.cfg'
 export PATH=/opt/zeek/bin:$PATH
 
 sudo /opt/zeek/bin/zeekctl stop
