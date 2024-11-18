@@ -122,3 +122,7 @@ redef digest_salt = "Please change this value.";
 
 # Output to JSON
 @load policy/tuning/json-logs.zeek
+
+@load hash_sha256
+
+#@load policy/protocols/icmp/main
