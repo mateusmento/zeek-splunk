@@ -29,4 +29,4 @@ sudo chmod +x ./splunk/install-splunk.sh
 sudo chmod +x ./splunk/install-splunk-forwarder.sh
 sudo chmod +x ./mininet/start-mn
 sudo chmod +x ./mininet/fix-dns
-
+sudo chmod +x ./mininet/install-zeek

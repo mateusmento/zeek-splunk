@@ -1,0 +1,10 @@
+#!/bin/sh
+echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
+sudo apt update
+echo "zeek zeek/email string your-email@example.com" | sudo debconf-set-selections
+echo "postfix postfix/postfix/mailname string $(hostname)" | sudo debconf-set-selections
+echo "postfix postfix/main_mailer_type select Local only" | sudo debconf-set-selections
+echo "postfix postfix/mailname string mininet-vm" | sudo debconf-set-selections
+sudo apt install zeek-6.0
+
