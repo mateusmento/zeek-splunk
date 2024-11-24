@@ -12,6 +12,8 @@ sudo sed -i 's/\r$//' ./zeek/install-zeek
 sudo sed -i 's/\r$//' ./zeek/check-policy
 sudo sed -i 's/\r$//' ./splunk/install-splunk.sh
 sudo sed -i 's/\r$//' ./splunk/install-splunk-forwarder.sh
+sudo sed -i 's/\r$//' ./mininet/start-mn
+sudo sed -i 's/\r$//' ./mininet/fix-dns
 
 sudo chmod +x ./zeek/install-zeek.sh
 sudo chmod +x ./zeek/include-hash-sha256.sh
@@ -25,3 +27,6 @@ sudo chmod +x ./zeek/install-deps
 sudo chmod +x ./zeek/check-policy
 sudo chmod +x ./splunk/install-splunk.sh
 sudo chmod +x ./splunk/install-splunk-forwarder.sh
+sudo chmod +x ./mininet/start-mn
+sudo chmod +x ./mininet/fix-dns
+

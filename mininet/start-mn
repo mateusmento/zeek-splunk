@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo -E mn --topo single,2 --controller default --nat --mac
