@@ -10,7 +10,7 @@ redef digest_salt = "Please change this value.";
 @load misc/loaded-scripts
 
 # Apply the default tuning scripts for common tuning settings.
-@load tuning/defaults
+#@load tuning/defaults
 
 # Estimate and log capture loss.
 @load misc/capture-loss
@@ -122,6 +122,7 @@ redef digest_salt = "Please change this value.";
 
 # Output to JSON
 @load policy/tuning/json-logs.zeek
+redef LogAscii::json_timestamps = JSON::TS_ISO8601;
 
 @load hash_sha256
 

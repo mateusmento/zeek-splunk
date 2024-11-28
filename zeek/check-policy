@@ -1,2 +1,0 @@
-#!/bin/sh
-sudo apt policy zeek-lts zeek-lts-core zeekctl-lts zeek-lts-zkg zeek-lts-client

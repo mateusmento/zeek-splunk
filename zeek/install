@@ -11,6 +11,12 @@ sudo cat /etc/debian_version
 sudo echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
 sudo curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
 sudo apt -y update
+
+echo "zeek zeek/email string your-email@example.com" | sudo debconf-set-selections
+echo "postfix postfix/postfix/mailname string $(hostname)" | sudo debconf-set-selections
+echo "postfix postfix/main_mailer_type select Local only" | sudo debconf-set-selections
+echo "postfix postfix/mailname string mininet-vm" | sudo debconf-set-selections
+
 sudo apt -y install zeek-lts -f
 sudo setcap cap_net_raw=eip /opt/zeek/bin/zeek
 sudo setcap cap_net_raw=eip /opt/zeek/bin/capstats
@@ -46,3 +52,7 @@ sudo /opt/zeek/bin/zkg upgrade
 sudo /opt/zeek/bin/zkg install --force zeek/hosom/file-extraction
 sudo /opt/zeek/bin/zkg load zeek/hosom/file-extraction
 sudo /opt/zeek/bin/zeekctl deploy
+
+
+echo "export PATH=\$PATH:/opt/zeek/bin" >> ~/.bashrc
+source ~/.bashrc
